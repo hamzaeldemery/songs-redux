@@ -12,7 +12,7 @@ const SongListComponent = ({ songs, selectSong }) => {
                         <button
                             className="ui button primary"
                             onClick={() => {
-                                selectSong(song.Name);
+                                selectSong(song);
                             }}
                         >
                             View Song
@@ -23,12 +23,10 @@ const SongListComponent = ({ songs, selectSong }) => {
         });
     };
 
-    console.log(songs);
     return <div className="ui divided list">{renderList(songs)}</div>;
 };
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return { songs: state.songs };
 };
 
